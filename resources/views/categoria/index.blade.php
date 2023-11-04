@@ -35,19 +35,18 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
 										<th>Nombre</th>
-
-                                        <th></th>
+                                        <th>Creda</th>
+                                        <th>Actulizada</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($categorias as $categoria)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
+                                            <td>{{ ++$i }}</td>                                        
 											<td>{{ $categoria->nombre }}</td>
-
+                                            <td>{{ $categoria->created_at }}</td>
+                                            <td>{{ $categoria->updated_at }}</td>
                                             <td>
                                                 <form action="{{ route('categorias.destroy',$categoria->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('categorias.show',$categoria->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>

@@ -35,9 +35,10 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
 										<th>Categoria</th>
 										<th>Nombre</th>
+                                        <th>Creado</th>
+                                        <th>Actulizado</th>
                                         <th>Acciones</th>
                                         <th>Logo</th>
                                     </tr>
@@ -52,6 +53,12 @@
                                             </td>
 											<td>
                                                 {{ $libro->nombre }}
+                                            </td>
+                                            <td>
+                                                {{ $libro->created_at }}
+                                            </td>
+                                            <td>
+                                                {{ $libro->updated_at }}
                                             </td>
                                             <td>
                                                 <form action="{{ route('libros.destroy',$libro->id) }}" method="POST">
